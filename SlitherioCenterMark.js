@@ -18,6 +18,9 @@
     if (window.ovxx > 31500 && window.ovxx < 33500 && window.ovyy > 31500 && window.ovyy < 33500) {
       markerBox.style.left = (32500 - window.ovxx) * 2 + window.innerWidth / 2 - markerBox.offsetWidth / 2;
       markerBox.style.top = (32500 - window.ovyy) * 2 + window.innerHeight / 2 - markerBox.offsetHeight / 2;
+      markerBox.style.display = 'block';
+    } else {
+      markerBox.style.display = 'none';
     }
 
     requestAnimationFrame(updatePosition);
@@ -31,6 +34,7 @@
     markerBox = document.createElement('div');
 
     markerBox.id = 'marker-box';
+    markerBox.style.display = 'none';
     markerBox.style.position = 'absolute';
     markerBox.style.left = '-1000px';
     markerBox.style.top = '-1000px';
